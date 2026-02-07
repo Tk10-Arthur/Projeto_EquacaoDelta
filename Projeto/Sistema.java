@@ -1,3 +1,4 @@
+package Projeto;
 import java.util.Scanner;
 import java.lang.Math;
 public class Sistema {
