@@ -13,7 +13,7 @@ O programa foi criado com elementos da prática de lógica de programação, est
 
 - Estruturas condicionais: if/else if/else
 - Laços de repetição: do while
-- Aplicação de interface gráfica
+- Aplicação de interface gráfica: JOptionPane
 - Métodos e separação de responsabilidades
 - Programação Orientada a Objetos (classes e métodos)
 - Boas práticas de organização

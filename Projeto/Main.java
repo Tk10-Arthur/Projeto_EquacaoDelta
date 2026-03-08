@@ -1,4 +1,6 @@
 package Projeto;
+import javax.swing.JOptionPane;
+
 class Main {
     public static void main(String[] args) {
         Sistema conexoes = new Sistema();
@@ -8,9 +10,8 @@ class Main {
            conexoes.calcularDelta();
            conexoes.resultadoRaizes();
         
-        } while (!conexoes.saidaPrograma().equals("sim"));
-        
-        System.out.print("Programa encerrado.");
-        conexoes.entrada.close();
+        } while (!conexoes.saidaPrograma().equalsIgnoreCase("sim"));
+
+        JOptionPane.showMessageDialog(null, "Programa encerrado.");
     }
 }

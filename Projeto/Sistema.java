@@ -1,21 +1,27 @@
 package Projeto;
-import java.util.Scanner;
 import java.lang.Math;
+import javax.swing.JOptionPane;
+
 public class Sistema {
-    Scanner entrada = new Scanner(System.in);
+
+    // Declaração das variáveis
     double a, b, c;
     double delta;
     String sair;
-    
+
     void entradaDados() {
-        System.out.print("\nDigite o coeficiente A: ");
-        a = entrada.nextDouble();
 
-        System.out.print("Digite o coeficiente B: ");
-        b = entrada.nextDouble();
+        do {
+            a = Double.parseDouble(JOptionPane.showInputDialog("Digite o coeficiente A: "));
 
-        System.out.print("Digite o coeficiente C: ");
-        c = entrada.nextDouble();
+            if(a == 0) {
+            JOptionPane.showMessageDialog(null, "O coeficiente A não pode ser 0!");
+            }
+
+        } while (a==0);
+
+        b = Double.parseDouble(JOptionPane.showInputDialog("Digite o coeficiente B: "));
+        c = Double.parseDouble(JOptionPane.showInputDialog("Digite o coeficiente C: "));
     }
     
     void calcularDelta() {
@@ -23,23 +29,23 @@ public class Sistema {
     }
 
     void resultadoRaizes() {
+        JOptionPane.showMessageDialog(null, "Delta: " + delta);
         if (delta > 0) {
             double x1 = ((-b + Math.sqrt(delta)) / (2 *a));
             double x2 = ((-b - Math.sqrt(delta)) / (2 *a));
-
-            System.out.print("\nX1: " + x1 + " / " + "X2: " + x2);
+            JOptionPane.showMessageDialog(null, "X1: " + x1 + " / " + "X2: " + x2);
 
         } else if (delta == 0) {
             double x = -b / (2 * a);
-            System.out.print("\nX: " + x);
+            JOptionPane.showMessageDialog(null, "X: " + x);
 
         } else {
-            System.out.print("\nNão existe raízes reais!");
+            JOptionPane.showMessageDialog(null, "Não existe raízes reais!");
         }
     }
 
     String saidaPrograma() {
-        System.out.print("\nDeseja encerrar o programa? (sim / não): ");sair = entrada.next().toLowerCase();
-        return sair;
+        sair = JOptionPane.showInputDialog("Deseja encerrar o programa? (sim / não): ");
+        return sair.toLowerCase();
     }
 }
